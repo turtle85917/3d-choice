@@ -18,7 +18,6 @@ export default function Group({ name, callback }: { name: string, callback: () =
           group.position.y += 0.05;
           if (group.position.y > height) {
             group.position.y = -height;
-            callback();
           }
         }
       }
@@ -31,6 +30,7 @@ export default function Group({ name, callback }: { name: string, callback: () =
       name={name}
       onClick={() => {
         setClick(true);
+        callback();
       }}
       >
       <Box position={[-1.2, 0, 0]} type={"left"} clicked={clicked} />
