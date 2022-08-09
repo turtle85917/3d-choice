@@ -12,8 +12,11 @@ export default function Box({ position, clicked, type }: { position: [x: number,
 
   useFrame((state, delta) => {
     if (ref.current) {
-      ref.current.rotation.x += 0.01;
       ref.current.rotation.z += 0.01;
+      if (choice) {
+        ref.current.rotation.x += 0.01;
+        ref.current.rotation.y += 0.01;
+      }
     }
   });
 
